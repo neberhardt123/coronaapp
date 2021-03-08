@@ -5,11 +5,13 @@ import Home from './pages/Home'
 import Graphs from './pages/Graphs'
 
 function App() {
+
   return (
     <>
       <Router>
         <Navbar />
           <Switch>
+          //navbar
             <Route path='/' exact component={Home} />
             <Route path='/graphs' component={Graphs} />
           </Switch>

@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home'
-import Graphs from './pages/Graphs'
+import Test from './pages/Test'
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
           <Switch>
           //navbar
             <Route path='/' exact component={Home} />
-            <Route path='/graphs' component={Graphs} />
+            <Route path='/test' component={Test} />
           </Switch>
       </Router>
     </>

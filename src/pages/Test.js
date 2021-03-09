@@ -2,7 +2,7 @@ import React from 'react'
 import {inputButtons} from '../components/inputButtons'
 import {Button} from '../components/Button.js'
 
-function Graphs() {
+function Test() {
 	//const [button, setButton] = useState(true);
 
 	//const handleClick = () => setClick(!click);
@@ -27,4 +27,4 @@ function Graphs() {
 	)
 }
 
-export default Graphs;
+export default Test;

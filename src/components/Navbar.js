@@ -13,12 +13,11 @@ function Navbar() {
 		<>
 		<IconContext.Provider value={{color:'#fff'}}>
 			<div className="navbar">
-				<h2 className="navTitle">Corona Virus</h2>
+				<h2 className="navTitle">COVID-19</h2>
 				<Link to="#" className='menu-bars'>
-				<FaIcons.FaBars onClick={showSidebar} />
+					{sidebar ?   <FaIcons.FaTimes onClick={showSidebar} /> :<FaIcons.FaBars onClick={showSidebar} />}
 				</Link>
 			</div>
-			
 			<nav className= {sidebar ? 'nav-menu active' : 'nav-menu'}>
 				<ul className='nav-menu-items' onClick={showSidebar}>
 					{SidebarData.map((item, index) => {

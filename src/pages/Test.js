@@ -346,22 +346,18 @@ class Test extends Component  {
 
             Age: '',
             Gender: '',
-            Ethnicity: '',
-            Asthma:  false,
-            CardiovascularDisease:  false,
-            Chroniclungdisease:  false,           
-            Immunesuppression:  false,           
-            Metabolicdisease:  false,           
-            Neurologicaldisease:  false,           
-            Otherdisease:  false,            
-            Autoimmunedisease:  false,            
-            Obesity:  false,            
+            Asthma:  false,  
+            CardiovascularDisease:  false,  
+            Chroniclungdisease:  false,            
+            Immunesuppression:  false,            
+            Diabetes:  false,            
+            Tobacco:  false,            
+            Otherdisease:  false,                      
+            Obesity:  false,             
             Pregnancy:  false,           
-            Renaldisease:  false,            
-            Gastrointestinalliverdisease:  false,            
-            Hypertension:  false,
-            value: '',
-            ReturnedData: {}
+            Renaldisease:  false,                      
+            Hypertension:  false,  
+            ReturnedData:  ''
         }
         //this.input = react.createRef();
         this.handleChange = this.handleChange.bind(this)
@@ -384,28 +380,21 @@ class Test extends Component  {
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
         this.setState({[name]: value});
-        console.log(name, value)
     }
 
 
-    async handleSubmit (event) {
-        alert('A form was submitted: ' + this.state);
-    
-         fetch('https://your-node-server-here.com/api/endpoint', {
+    async handleSubmit (event) {  
+         fetch('backendstuff' , {
             method: 'POST',
-            // We convert the React state to JSON and send it as the POST body
-            body: JSON.stringify(this.state)
-          }).then(function(response) {
-            console.log(response)
-            return response.json();
-          });
-    
+            headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify(this.state),
+          })   
         event.preventDefault();
     }
  
-	//const [button, setButton] = useState(true);
+ 
      render(){  
-	//const handleClick = () => setClick(!click);
+ 
 	return (
 		<div className='home'>
 			<div className='item'> 
@@ -430,18 +419,8 @@ class Test extends Component  {
                         value={this.state.Gender}
                         onChange={this.handleChange}
                     /> 
+ 
                     <br/>
-                     <input 
-                        type="text"
-                        name="Ethnicity"
-                        width="50px"
-                        placeholder="Ethnicity"
-                        className="input"
-                        value={this.state.Ethnicity}
-                        onChange={this.handleChange}
-                        /> 
-                        <br/>
-
                     <input 
                         type="checkbox"
                         className ="checkbox"
@@ -482,8 +461,8 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
-                        name="Metabolic disease"
-                        value={this.state.Metabolicdisease}
+                        name="Diabetes"
+                        value={this.state.Diabetes}
                         onChange={this.handleChange} 
                         />  
                     Metabolic disease
@@ -491,8 +470,8 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
-                        name="Neurological disease"
-                        value={this.state.Neurologicaldisease}
+                        name="Tobacco"
+                        value={this.state.Tobacco}
                         onChange={this.handleChange} 
                         />       
                     Neurological disease    
@@ -513,15 +492,7 @@ class Test extends Component  {
                         value={this.state.Autoimmunedisease}
                         onChange={this.handleChange} 
                         />
-                    Autoimmune disease
-                    <br/>
-					<br/>
-                     <input 
-                        type="checkbox"
-                        name="Obesity"
-                        value={this.state.Obesity}
-                        onChange={this.handleChange} 
-                        />
+ 
                     Obesity
                     <br/>
 					<br/>
@@ -543,27 +514,22 @@ class Test extends Component  {
                     Renal disease
                     <br/>
 					<br/>
-                     <input 
+                    <input 
                         type="checkbox"
-                        name="Gastrointestinal/liver disease"
-                        value={this.state.Gastrointestinalliverdisease}
-                        onChange={this.handleChange} 
-                        /> 
-                    Gastrointestinal/liver disease
-                    <br/>
-					<br/>
-                     <input 
-                        type="checkbox"
-                        name="Hypertension"                      
+                        name="Hypertension"
                         value={this.state.Hypertension}
-                        onChange={this.handleChange}  
+                        onChange={this.handleChange} 
                         />
                     Hypertension    
-                    <br/> 
+                    <br/>
                     {/* <button onClick={this.submit}  >Go</button> */}
 				{/* <Button buttonStyle='btn--outline'   >Go</Button> */}
                 <input type ="submit" value = "Submit"/>
               </form>
+              <input 
+                  type="text" 
+                  name = "result"
+                  value = {this.state.ReturnedData} />
 			</div>
 
 		</div>

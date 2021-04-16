@@ -465,7 +465,7 @@ class Test extends Component  {
                         value={this.state.Diabetes}
                         onChange={this.handleChange} 
                         />  
-                    Metabolic disease
+                    Diabetes
                     <br/>
 					<br/>
                      <input 
@@ -474,7 +474,7 @@ class Test extends Component  {
                         value={this.state.Tobacco}
                         onChange={this.handleChange} 
                         />       
-                    Neurological disease    
+                    Tobacco  
                     <br/> 
 					<br/>                                        
                      <input 
@@ -488,8 +488,8 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
-                        name="Autoimmune disease"
-                        value={this.state.Autoimmunedisease}
+                        name="Obesity"
+                        value={this.state.Obesity}
                         onChange={this.handleChange} 
                         />
  

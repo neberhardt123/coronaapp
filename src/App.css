@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
 
-* {
+ * {
   box-sizing: border-box;
   margin:0;
   padding:0;
@@ -18,7 +18,7 @@ body {
   height:70vh;
   flex-direction:column;
   align-items:left;
-  font-size:1.5rem;
+  font-size:1.3rem;
   align-content:left;
 }
 .home h1 {
@@ -27,20 +27,18 @@ body {
   padding:20px;
   font-size:2.5rem;
   color:#333333;
-}
+}  
 
-.item {
+  .item {
   margin-top:10px;
   padding:10px;
   text-align:center;
+  align-content: left;
   background-color:#f2f2f2;
   background-color:white;
   border-radius:5px;
-  /*
-  -webkit-box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.75);
-  moz-box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.75);
-  box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.75);
-  */
+ 
+  
 
 }
 
@@ -52,4 +50,34 @@ body {
   background:none;
   text-align:center;
 }
+
+.submit{
+
+  padding: 8px 40px;
+	border-radius: 8px;
+	outline:none;
+	border:none;
+	cursor:pointer;
+	white-space: nowrap;
+  background-color:#150e5f;
+  color: rgb(224, 223, 223); 
+
+}
+
+.return{
+  padding:10px;
+  margin-bottom:40px;
+  border:none;
+  border-bottom:1px solid gray;
+  background:none;
+  text-align:center;
+
+}
+
+.checkbox{
+ 
+  align-content: left;
+  text-align: left;
+ 
+}   
 

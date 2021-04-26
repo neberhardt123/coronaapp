@@ -333,7 +333,6 @@ class Test extends Component  {
 }
 export default Test;
 */
-
 import React, {Component} from 'react'
 import {inputButtons} from '../components/inputButtons'
 import {Button} from '../components/Button.js'
@@ -434,6 +433,7 @@ class Test extends Component  {
 					<br/>
                     <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Cardiovascular Disease"
                         value={this.state.CardiovascularDisease}
                         onChange={this.handleChange} 
@@ -443,6 +443,7 @@ class Test extends Component  {
 					<br/>					
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Chronic lung disease"
                         value={this.state.Chroniclungdisease}
                         onChange={this.handleChange} 
@@ -452,6 +453,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Immune suppression"
                         value={this.state.Immunesuppression}
                         onChange={this.handleChange} 
@@ -461,6 +463,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Diabetes"
                         value={this.state.Diabetes}
                         onChange={this.handleChange} 
@@ -470,6 +473,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Tobacco"
                         value={this.state.Tobacco}
                         onChange={this.handleChange} 
@@ -479,6 +483,7 @@ class Test extends Component  {
 					<br/>                                        
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Other disease"
                         value={this.state.Otherdisease}
                         onChange={this.handleChange} 
@@ -488,6 +493,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Obesity"
                         value={this.state.Obesity}
                         onChange={this.handleChange} 
@@ -498,6 +504,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Pregnancy"
                         value={this.state.Pregnancy}
                         onChange={this.handleChange} 
@@ -507,6 +514,7 @@ class Test extends Component  {
 					<br/>
                      <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Renal disease"
                         value={this.state.Renaldisease}
                         onChange={this.handleChange} 
@@ -516,6 +524,7 @@ class Test extends Component  {
 					<br/>
                     <input 
                         type="checkbox"
+                        className ="checkbox"
                         name="Hypertension"
                         value={this.state.Hypertension}
                         onChange={this.handleChange} 
@@ -524,12 +533,15 @@ class Test extends Component  {
                     <br/>
                     {/* <button onClick={this.submit}  >Go</button> */}
 				{/* <Button buttonStyle='btn--outline'   >Go</Button> */}
-                <input type ="submit" value = "Submit"/>
+                <br/>
+                <input type ="submit" value = "Submit" className="submit"/>
               </form>
+              <br/>
               <input 
                   type="text" 
                   name = "result"
-                  value = {this.state.ReturnedData} />
+                  value = {this.state.ReturnedData} 
+                  className="return"/>
 			</div>
 
 		</div>

@@ -337,6 +337,11 @@ import React, {Component} from 'react'
 import {inputButtons} from '../components/inputButtons'
 import {Button} from '../components/Button.js'
 
+const initialState = {
+    AgeError: '',
+    GenderError: ''
+}
+
 class Test extends Component  {
 	
 	constructor() {
@@ -344,7 +349,9 @@ class Test extends Component  {
         this.state = {
 
             Age: '',
+            AgeError: '',
             Gender: '',
+            GenderError: '',
             Asthma:  false,  
             CardiovascularDisease:  false,  
             Chroniclungdisease:  false,            
@@ -362,6 +369,8 @@ class Test extends Component  {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+
+
 	
 	componentDidMount() {
         fetch(" ")
@@ -381,17 +390,38 @@ class Test extends Component  {
         this.setState({[name]: value});
     }
 
-
+    validate = () => {
+        const re = /^[0-9\b]+$/;
+        let AgeError ='';
+        let GenderError='';
+        if(this.state.Age === '' || !re.test(this.state.Age) || this.state.Age > 150) {
+            AgeError = "Please enter a valid Age";
+        }
+        if(this.state.Gender === '') {
+            GenderError = "Gender cannot be empty";
+        }
+        if(AgeError || GenderError) {
+            this.setState({AgeError, GenderError});
+            return false;
+        }
+        return true;
+    }
     async handleSubmit (event) {  
+        const isValid = this.validate();
+        if(isValid) {
+            this.setState(initialState);
+        }
          fetch('backendstuff' , {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(this.state),
           })   
         event.preventDefault();
+
     }
  
- 
+
+
      render(){  
  
 	return (
@@ -408,6 +438,7 @@ class Test extends Component  {
 	                    className="input"
 	                    onChange={this.handleChange}
                     /> 
+                    <div style ={{fontSize: 13, color:"red"}}>{this.state.AgeError}</div>
                     <br/>
                     <input 
                         type="text"
@@ -420,6 +451,9 @@ class Test extends Component  {
                     /> 
  
                     <br/>
+                    <div style ={{fontSize: 13, color:"red"}}>{this.state.GenderError}</div>
+                    <br/>
+
                     <input 
                         type="checkbox"
                         className ="checkbox"

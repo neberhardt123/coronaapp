@@ -33,7 +33,7 @@ body {
   margin-top:10px;
   padding:10px;
   text-align:center;
-  align-content: left;
+  align-content: center;
   background-color:#f2f2f2;
   background-color:white;
   border-radius:5px;
@@ -61,7 +61,13 @@ body {
 	white-space: nowrap;
   background-color:#150e5f;
   color: rgb(224, 223, 223); 
+  display: block;
+  margin-left: 640px;   
 
+}
+
+.reset{
+  all:initial;
 }
 
 .return{
@@ -74,10 +80,16 @@ body {
 
 }
 
-.checkbox{
+    /* .checkbox{
  
-  align-content: left;
-  text-align: left;
+      display: block;
+    margin-left: 630px;  
+    margin-right: 300px;    
+}       
+  */
+ .checkText{
  
-}   
-
+  display: block;
+  margin-left: 630px;  
+  margin-right: 300px;  
+}

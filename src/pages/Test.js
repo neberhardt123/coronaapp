@@ -397,8 +397,9 @@ class Test extends Component  {
         if(this.state.Age === '' || !re.test(this.state.Age) || this.state.Age > 150) {
             AgeError = "Please enter a valid Age";
         }
-        if(this.state.Gender === '') {
-            GenderError = "Gender cannot be empty";
+        if( this.state.Gender !== 'Male' &&  this.state.Gender !== 'male' &&
+            this.state.Gender !== 'Female' &&  this.state.Gender !== 'female'   ) {
+            GenderError = "Please enter a valid Gender";
         }
         if(AgeError || GenderError) {
             this.setState({AgeError, GenderError});
@@ -453,8 +454,8 @@ class Test extends Component  {
                     <br/>
                     <div style ={{fontSize: 13, color:"red"}}>{this.state.GenderError}</div>
                     <br/>
-
-                    <input 
+   
+                    <input  
                         type="checkbox"
                         className ="checkbox"
                         name="Asthma" 
@@ -565,6 +566,7 @@ class Test extends Component  {
                         />
                     Hypertension    
                     <br/>
+ 
                     {/* <button onClick={this.submit}  >Go</button> */}
 				{/* <Button buttonStyle='btn--outline'   >Go</Button> */}
                 <br/>

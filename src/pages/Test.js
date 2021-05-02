@@ -352,17 +352,22 @@ class Test extends Component  {
             AgeError: '',
             Gender: '',
             GenderError: '',
+            Inpatient: false,
+            Intubed: false,
+            Pneumonia: false,
+            Pregnancy:  false,   
+            Diabetes:  false,  
+            COPD:  false,                                     
             Asthma:  false,  
-            CardiovascularDisease:  false,  
-            Chroniclungdisease:  false,            
-            Immunesuppression:  false,            
-            Diabetes:  false,            
-            Tobacco:  false,            
-            Otherdisease:  false,                      
-            Obesity:  false,             
-            Pregnancy:  false,           
-            Renaldisease:  false,                      
+            ImmuneSuppression:  false,   
             Hypertension:  false,  
+            OtherDisease:  false,                                   
+            CardiovascularDisease:  false,  
+            Obesity: false,              
+            RenalChronicDisease:  false,             
+            Tobacco:  false,                
+            CovidContact: false,
+            ICU: false,
             ReturnedData:  ''
         }
         //this.input = react.createRef();
@@ -456,117 +461,45 @@ class Test extends Component  {
                     <br/>
 
                     <div className='reset'>
-                     
-                    <label for="Asthma" className="checkText" > 
+                    <label for="Inpatient" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Asthma" 
-                        id="Asthma"
-                        value={this.state.Asthma}
+                        name="Inpatient" 
+                        id="Inpatient"
+                        value={this.state.Inpatient}
                         onChange={this.handleChange} 
                           />
-                          Asthma
-                    </label>  
-                      
-                  
-   
- 
-                    <br/>
-					<br/>
-                     
-                    <label for="Cardiovascular Disease" className="checkText" >  
-                    <input 
-                        type="checkbox"
-                        className ="checkbox"
-                        name="Cardiovascular Disease"
-                        id="Cardiovascular Disease"
-                        value={this.state.CardiovascularDisease}
-                        onChange={this.handleChange} 
-                        /> 
-                        Cardiovascular Disease 
-                     </label>  
-                    <br/>
-					<br/>		
-                    <label for="Chronic lung disease" className="checkText" >                      			
-                     <input 
-                        type="checkbox"
-                        className ="checkbox"
-                        name="Chronic lung disease"
-                        id="Chronic lung disease"
-                        value={this.state.Chroniclungdisease}
-                        onChange={this.handleChange} 
-                        />  
-                      Chronic lung disease 
-                     </label>
-                    <br/>
-					<br/>
-                    <label for="Immune suppression" className="checkText" >                     
-                     <input 
-                        type="checkbox"
-                        className ="checkbox"
-                        name="Immune suppression"
-                        id="Immune suppression"
-                        value={this.state.Immunesuppression}
-                        onChange={this.handleChange} 
-                        />
-                     Immune suppression 
-                      </label>
-                    <br/>
-					<br/>
-                    <label for="Diabetes" className="checkText" >                     
-                     <input 
-                        type="checkbox"
-                        className ="checkbox"
-                        name="Diabetes"
-                        id="Diabetes"
-                        value={this.state.Diabetes}
-                        onChange={this.handleChange} 
-                        />  
-                     Diabetes 
+                          Inpatient
                     </label> 
                     <br/>
-					<br/>
-                    <label for="Tobacco" className="checkText" >                      
-                     <input 
+                   
+                    <label for="Intubed" className="checkText" > 
+                    <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Tobacco"
-                        id="Tobacco"
-                        value={this.state.Tobacco}
+                        name="Intubed" 
+                        id="Intubed"
+                        value={this.state.Intubed}
                         onChange={this.handleChange} 
-                        />       
-                     Tobacco 
-                     </label> 
-                    <br/> 
-					<br/>                                        
-                    <label for="Other disease" className="checkText" >                      
-                     <input 
+                          />
+                          Intubed
+                    </label> 
+                    <br/>    
+                                     
+                    <label for="Pneumonia" className="checkText" > 
+                    <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Other disease"
-                        id="Other disease"
-                        value={this.state.Otherdisease}
+                        name="Pneumonia" 
+                        id="Pneumonia"
+                        value={this.state.Pneumonia}
                         onChange={this.handleChange} 
-                        />
-                     Other disease 
-                     </label>
+                          />
+                         Pneumonia
+                    </label>                                    
                     <br/>
-					<br/>
-                    <label for="Obesity" className="checkText" > 
-                     <input 
-                        type="checkbox"
-                        className ="checkbox"
-                        name="Obesity"
-                        id="Obesity"
-                        value={this.state.Obesity}
-                        onChange={this.handleChange} 
-                        />
  
-                     Obesity 
-                    </label>  
-                    <br/>
-					<br/>
                     <label for="Pregnancy" className="checkText" >                     
                      <input 
                         type="checkbox"
@@ -579,20 +512,59 @@ class Test extends Component  {
                          Pregnancy 
                      </label>
                     <br/>
-					<br/>
-                    <label for="Renal disease" className="checkText" >                     
+ 
+                    <label for="Diabetes" className="checkText" >                     
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Renal disease"
-                        id="Renal disease"
-                        value={this.state.Renaldisease}
+                        name="Diabetes"
+                        id="Diabetes"
+                        value={this.state.Diabetes}
                         onChange={this.handleChange} 
-                        />
-                     Renal disease  
+                        />  
+                     Diabetes 
+                    </label> 
+                    <br/>
+ 
+                    <label for="COPD" className="checkText" >                      			
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="COPD"
+                        id="COPD"
+                        value={this.state.COPD}
+                        onChange={this.handleChange} 
+                        />  
+                      COPD
                      </label>
                     <br/>
-					<br/>
+                                                                             
+                    <label for="Asthma" className="checkText" > 
+                    <input  
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Asthma" 
+                        id="Asthma"
+                        value={this.state.Asthma}
+                        onChange={this.handleChange} 
+                          />
+                          Asthma
+                    </label> 
+                    <br/>
+                   
+                    <label for="Immune Suppression" className="checkText" >                     
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Immune Suppression"
+                        id="Immune Suppression"
+                        value={this.state.ImmuneSuppression}
+                        onChange={this.handleChange} 
+                        />
+                     Immune Suppression 
+                      </label>  
+                    <br/>
+ 
                     <label for="Hypertension" className="checkText" >                     
                     <input 
                         type="checkbox"
@@ -603,8 +575,99 @@ class Test extends Component  {
                         onChange={this.handleChange} 
                         />
                      Hypertension
-                     </label>    
+                     </label>                                                         
                     <br/>
+     
+                    <label for="Other Disease" className="checkText" >                      
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Other Disease"
+                        id="Other Disease"
+                        value={this.state.OtherDisease}
+                        onChange={this.handleChange} 
+                        />
+                     Other Disease 
+                     </label>
+                    <br/>
+                                  
+                    <label for="Cardiovascular Disease" className="checkText" >  
+                    <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Cardiovascular Disease"
+                        id="Cardiovascular Disease"
+                        value={this.state.CardiovascularDisease}
+                        onChange={this.handleChange} 
+                        /> 
+                        Cardiovascular Disease 
+                     </label>                      
+                    <br/>
+ 
+                    <label for="Obesity" className="checkText" > 
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Obesity"
+                        id="Obesity"
+                        value={this.state.Obesity}
+                        onChange={this.handleChange} 
+                        />
+                     Obesity 
+                    </label>  
+                    <br/>
+                  	                                        
+                    <label for="Renal Disease" className="checkText" >                     
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Renal Disease"
+                        id="Renal Disease"
+                        value={this.state.RenalChronicDisease}
+                        onChange={this.handleChange} 
+                        />
+                     Renal Chronic  
+                     </label>
+                    <br/>
+ 
+                    <label for="Tobacco" className="checkText" >                      
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="Tobacco"
+                        id="Tobacco"
+                        value={this.state.Tobacco}
+                        onChange={this.handleChange} 
+                        />       
+                     Tobacco 
+                     </label> 
+                    <br/> 
+ 
+                    <label for="CovidContact" className="checkText" >                      
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="CovidContact"
+                        id="CovidContact"
+                        value={this.state.CovidContact}
+                        onChange={this.handleChange} 
+                        />       
+                     Covid Contact 
+                     </label> 
+                    <br/> 
+ 
+                    <label for="ICU" className="checkText" >                      
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="ICU"
+                        id="ICU"
+                        value={this.state.ICU}
+                        onChange={this.handleChange} 
+                        />       
+                     ICU 
+                     </label> 
+					<br/>                                                               
                 </div>
                     {/* <button onClick={this.submit}  >Go</button> */}
 				{/* <Button buttonStyle='btn--outline'   >Go</Button> */}

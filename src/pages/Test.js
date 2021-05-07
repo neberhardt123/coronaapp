@@ -379,7 +379,7 @@ class Test extends Component  {
 
 	
 	componentDidMount() {
-        fetch(" ")
+        fetch("http://127.0.0.1:5000/")
             .then(response => response.json())
             .then(response => {
                 const {data} = response.data
@@ -418,10 +418,10 @@ class Test extends Component  {
         if(isValid) {
             this.setState(initialState);
         }
-         fetch('backendstuff' , {
+         fetch('http://127.0.0.1:5000/' , {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
-            body: JSON.stringify(this.state),
+            body: JSON.stringify(this.state ),
           })   
         event.preventDefault();
 
@@ -434,11 +434,11 @@ class Test extends Component  {
 	return (
 		<div className='home'>
 			<div className='item'> 
-			<h1>Please Enter your information</h1>
+			<h1>Please enter your information</h1>
 			<form onSubmit={this.handleSubmit}>
                  	<input 
 	                    type="text"
-	                    name="Age"
+	                    name="age"
 	                    placeholder="Age"
 	                    width="100%"
 	                    value={this.state.age}
@@ -449,7 +449,7 @@ class Test extends Component  {
                     <br/>
                     <input 
                         type="text"
-                        name="Gender"
+                        name="sex"
                         width="100px"
                         placeholder="Gender"
                         className="input"

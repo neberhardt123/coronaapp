@@ -348,26 +348,27 @@ class Test extends Component  {
         super()
         this.state = {
 
-            Age: '',
+            age: '',
             AgeError: '',
-            Gender: '',
+            sex: '',
             GenderError: '',
-            Inpatient: false,
-            Intubed: false,
-            Pneumonia: false,
-            Pregnancy:  false,   
-            Diabetes:  false,  
-            COPD:  false,                                     
-            Asthma:  false,  
-            ImmuneSuppression:  false,   
-            Hypertension:  false,  
-            OtherDisease:  false,                                   
-            CardiovascularDisease:  false,  
-            Obesity: false,              
-            RenalChronicDisease:  false,             
-            Tobacco:  false,                
-            CovidContact: false,
-            ICU: false,
+            patient_type: false,
+            intubed: false,
+            pneumonia: false,
+            pregnancy:  false,   
+            diabetes:  false,  
+            copd:  false,                                     
+            asthma:  false,  
+            inmsupr:  false,   
+            hypertension:  false,  
+            other_disease:  false,                                   
+            cardiovascular:   false,  
+            obesity: false,              
+            renal_chronic:  false,             
+            tobacco:  false,                
+            covid_res: false,
+            contact_other_covid: false,
+            icu: false,
             ReturnedData:  ''
         }
         //this.input = react.createRef();
@@ -399,11 +400,11 @@ class Test extends Component  {
         const re = /^[0-9\b]+$/;
         let AgeError ='';
         let GenderError='';
-        if(this.state.Age === '' || !re.test(this.state.Age) || this.state.Age > 150) {
+        if(this.state.age === '' || !re.test(this.state.age) || this.state.age > 150) {
             AgeError = "Please enter a valid Age";
         }
-        if( this.state.Gender !== 'Male' &&  this.state.Gender !== 'male' &&
-            this.state.Gender !== 'Female' &&  this.state.Gender !== 'female'   ) {
+        if( this.state.sex !== 'Male' &&  this.state.sex !== 'male' &&
+            this.state.sex !== 'Female' &&  this.state.sex !== 'female'   ) {
             GenderError = "Please enter a valid Gender";
         }
         if(AgeError || GenderError) {
@@ -440,7 +441,7 @@ class Test extends Component  {
 	                    name="Age"
 	                    placeholder="Age"
 	                    width="100%"
-	                    value={this.state.Age}
+	                    value={this.state.age}
 	                    className="input"
 	                    onChange={this.handleChange}
                     /> 
@@ -452,7 +453,7 @@ class Test extends Component  {
                         width="100px"
                         placeholder="Gender"
                         className="input"
-                        value={this.state.Gender}
+                        value={this.state.sex}
                         onChange={this.handleChange}
                     /> 
  
@@ -467,7 +468,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Inpatient" 
                         id="Inpatient"
-                        value={this.state.Inpatient}
+                        value={this.state.inpatient}
                         onChange={this.handleChange} 
                           />
                           Inpatient
@@ -480,7 +481,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Intubed" 
                         id="Intubed"
-                        value={this.state.Intubed}
+                        value={this.state.intubed}
                         onChange={this.handleChange} 
                           />
                           Intubed
@@ -493,7 +494,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Pneumonia" 
                         id="Pneumonia"
-                        value={this.state.Pneumonia}
+                        value={this.state.pneumonia}
                         onChange={this.handleChange} 
                           />
                          Pneumonia
@@ -506,7 +507,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Pregnancy"
                         id="Pregnancy"
-                        value={this.state.Pregnancy}
+                        value={this.state.pregnancy}
                         onChange={this.handleChange} 
                         />
                          Pregnancy 
@@ -519,7 +520,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Diabetes"
                         id="Diabetes"
-                        value={this.state.Diabetes}
+                        value={this.state.diabetes}
                         onChange={this.handleChange} 
                         />  
                      Diabetes 
@@ -532,7 +533,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="COPD"
                         id="COPD"
-                        value={this.state.COPD}
+                        value={this.state.copd}
                         onChange={this.handleChange} 
                         />  
                       COPD
@@ -545,7 +546,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Asthma" 
                         id="Asthma"
-                        value={this.state.Asthma}
+                        value={this.state.asthma}
                         onChange={this.handleChange} 
                           />
                           Asthma
@@ -558,7 +559,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Immune Suppression"
                         id="Immune Suppression"
-                        value={this.state.ImmuneSuppression}
+                        value={this.state.inmsupr}
                         onChange={this.handleChange} 
                         />
                      Immune Suppression 
@@ -571,7 +572,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Hypertension"
                         id="Hypertension"
-                        value={this.state.Hypertension}
+                        value={this.state.hypertension}
                         onChange={this.handleChange} 
                         />
                      Hypertension
@@ -584,7 +585,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Other Disease"
                         id="Other Disease"
-                        value={this.state.OtherDisease}
+                        value={this.state.other_disease}
                         onChange={this.handleChange} 
                         />
                      Other Disease 
@@ -597,7 +598,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Cardiovascular Disease"
                         id="Cardiovascular Disease"
-                        value={this.state.CardiovascularDisease}
+                        value={this.state.cardiovascular}
                         onChange={this.handleChange} 
                         /> 
                         Cardiovascular Disease 
@@ -610,7 +611,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Obesity"
                         id="Obesity"
-                        value={this.state.Obesity}
+                        value={this.state.obesity}
                         onChange={this.handleChange} 
                         />
                      Obesity 
@@ -623,7 +624,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Renal Disease"
                         id="Renal Disease"
-                        value={this.state.RenalChronicDisease}
+                        value={this.state.renal_chronic}
                         onChange={this.handleChange} 
                         />
                      Renal Chronic  
@@ -636,7 +637,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="Tobacco"
                         id="Tobacco"
-                        value={this.state.Tobacco}
+                        value={this.state.tobacco}
                         onChange={this.handleChange} 
                         />       
                      Tobacco 
@@ -649,12 +650,25 @@ class Test extends Component  {
                         className ="checkbox"
                         name="CovidContact"
                         id="CovidContact"
-                        value={this.state.CovidContact}
+                        value={this.state.contact_other_covid}
                         onChange={this.handleChange} 
                         />       
                      Covid Contact 
                      </label> 
                     <br/> 
+
+                    <label for="CovidRes" className="checkText" >                      
+                     <input 
+                        type="checkbox"
+                        className ="checkbox"
+                        name="CovidRes"
+                        id="CovidRes"
+                        value={this.state.covid_res}
+                        onChange={this.handleChange} 
+                        />       
+                     Covid Resistance
+                     </label> 
+                    <br/>                     
  
                     <label for="ICU" className="checkText" >                      
                      <input 
@@ -662,7 +676,7 @@ class Test extends Component  {
                         className ="checkbox"
                         name="ICU"
                         id="ICU"
-                        value={this.state.ICU}
+                        value={this.state.icu}
                         onChange={this.handleChange} 
                         />       
                      ICU 

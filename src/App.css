@@ -61,14 +61,13 @@ body {
 	white-space: nowrap;
   background-color:#150e5f;
   color: rgb(224, 223, 223); 
-  /* display: block;
-  margin-left: 660px;    */
-
+ 
 }
 
-/* .reset{
-  all:initial;
-} */
+.reset {
+  text-align:left;
+  margin-left:45%;  
+  }
 
 .return{
   padding:10px;
@@ -76,19 +75,16 @@ body {
   border:none;
   border-bottom:1px solid gray;
   background:none;
-   text-align:center;
-  /* display: flex;   */
-  /* margin-left: 640px;     */
+  text-align: center;
 }
  
- /* .checkText{
+ .checkText{
  
- display: block;
-  margin-left: 620px;  
-  margin-right: 300px;  
+  font-size:1.1rem;
  
  
 
-} */
+}
+ 
  
  

@@ -374,22 +374,12 @@ class Test extends Component  {
         //this.input = react.createRef();
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.Convert = this.Convert.bind(this)        
     }
-
-
-	
-	componentDidMount() {
-        fetch("http://127.0.0.1:5000/")
-            .then(response => response.json())
-            .then(response => {
-                const {data} = response.data
-                this.setState({  ReturnedData: data })
-            })
-    }
+ 
 
 	handleChange(event) {
-        //const {name, value} = event.target
-        //this.setState({ [name]: value })
+ 
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -417,15 +407,43 @@ class Test extends Component  {
         const isValid = this.validate();
         if(isValid) {
             this.setState(initialState);
-        }
-         fetch('http://127.0.0.1:5000/' , {
+          
+ 
+         fetch('http://127.0.0.1:8080/' , {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(this.state ),
           })   
-        event.preventDefault();
+        //   .then(response => response.json())
+        //   .then(data => this.setState({ReturnedData: data["Result"]}))   
 
+          .then(response => response.json())
+          .then(data =>  {this.Convert(data)})               
+ 
+            
+            // JSON.parse(data), 
+            // if ()
+            // this.setState({ReturnedData: JSON.parse(data)})) 
+
+            //   x = {"Result":}
+            //   const {data} = response.data 
+            //   this.setState({  ReturnedData: data })})  
+
+        //   .then(response => response.json()) 
+        //   .then(data => console.log(data));
+         }
+        event.preventDefault();
+ 
     }
+
+    Convert(data){
+        if(data["Result"] == 0){ 
+            this.setState({ReturnedData: 'Alive'});      
+        }       
+        else 
+            this.setState({ReturnedData: 'Deceased'}); 
+
+    } 
  
 
 
@@ -462,12 +480,12 @@ class Test extends Component  {
                     <br/>
 
                     <div className='reset'>
-                    <label for="Inpatient" className="checkText" > 
+                    <label for="inpatient" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Inpatient" 
-                        id="Inpatient"
+                        name="inpatient" 
+                        id="inpatient"
                         value={this.state.inpatient}
                         onChange={this.handleChange} 
                           />
@@ -475,12 +493,12 @@ class Test extends Component  {
                     </label> 
                     <br/>
                    
-                    <label for="Intubed" className="checkText" > 
+                    <label for="intubed" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Intubed" 
-                        id="Intubed"
+                        name="intubed" 
+                        id="intubed"
                         value={this.state.intubed}
                         onChange={this.handleChange} 
                           />
@@ -488,12 +506,12 @@ class Test extends Component  {
                     </label> 
                     <br/>    
                                      
-                    <label for="Pneumonia" className="checkText" > 
+                    <label for="pneumonia" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Pneumonia" 
-                        id="Pneumonia"
+                        name="pneumonia" 
+                        id="pneumonia"
                         value={this.state.pneumonia}
                         onChange={this.handleChange} 
                           />
@@ -501,12 +519,12 @@ class Test extends Component  {
                     </label>                                    
                     <br/>
  
-                    <label for="Pregnancy" className="checkText" >                     
+                    <label for="pregnancy" className="checkText" >                     
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Pregnancy"
-                        id="Pregnancy"
+                        name="pregnancy"
+                        id="pregnancy"
                         value={this.state.pregnancy}
                         onChange={this.handleChange} 
                         />
@@ -514,12 +532,12 @@ class Test extends Component  {
                      </label>
                     <br/>
  
-                    <label for="Diabetes" className="checkText" >                     
+                    <label for="diabetes" className="checkText" >                     
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Diabetes"
-                        id="Diabetes"
+                        name="diabetes"
+                        id="diabetes"
                         value={this.state.diabetes}
                         onChange={this.handleChange} 
                         />  
@@ -527,12 +545,12 @@ class Test extends Component  {
                     </label> 
                     <br/>
  
-                    <label for="COPD" className="checkText" >                      			
+                    <label for="copd" className="checkText" >                      			
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="COPD"
-                        id="COPD"
+                        name="copd"
+                        id="copd"
                         value={this.state.copd}
                         onChange={this.handleChange} 
                         />  
@@ -540,12 +558,12 @@ class Test extends Component  {
                      </label>
                     <br/>
                                                                              
-                    <label for="Asthma" className="checkText" > 
+                    <label for="asthma" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="Asthma" 
-                        id="Asthma"
+                        name="asthma" 
+                        id="asthma"
                         value={this.state.asthma}
                         onChange={this.handleChange} 
                           />
@@ -553,12 +571,12 @@ class Test extends Component  {
                     </label> 
                     <br/>
                    
-                    <label for="Immune Suppression" className="checkText" >                     
+                    <label for="inmsupr" className="checkText" >                     
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Immune Suppression"
-                        id="Immune Suppression"
+                        name="inmsupr"
+                        id="inmsupr"
                         value={this.state.inmsupr}
                         onChange={this.handleChange} 
                         />
@@ -566,12 +584,12 @@ class Test extends Component  {
                       </label>  
                     <br/>
  
-                    <label for="Hypertension" className="checkText" >                     
+                    <label for="hypertension" className="checkText" >                     
                     <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Hypertension"
-                        id="Hypertension"
+                        name="hypertension"
+                        id="hypertension"
                         value={this.state.hypertension}
                         onChange={this.handleChange} 
                         />
@@ -579,12 +597,12 @@ class Test extends Component  {
                      </label>                                                         
                     <br/>
      
-                    <label for="Other Disease" className="checkText" >                      
+                    <label for="other_disease" className="checkText" >                      
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Other Disease"
-                        id="Other Disease"
+                        name="other_disease"
+                        id="other_disease"
                         value={this.state.other_disease}
                         onChange={this.handleChange} 
                         />
@@ -592,12 +610,12 @@ class Test extends Component  {
                      </label>
                     <br/>
                                   
-                    <label for="Cardiovascular Disease" className="checkText" >  
+                    <label for="cardiovascular" className="checkText" >  
                     <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Cardiovascular Disease"
-                        id="Cardiovascular Disease"
+                        name="cardiovascular"
+                        id="cardiovascular"
                         value={this.state.cardiovascular}
                         onChange={this.handleChange} 
                         /> 
@@ -605,12 +623,12 @@ class Test extends Component  {
                      </label>                      
                     <br/>
  
-                    <label for="Obesity" className="checkText" > 
+                    <label for="obesity" className="checkText" > 
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Obesity"
-                        id="Obesity"
+                        name="obesity"
+                        id="obesity"
                         value={this.state.obesity}
                         onChange={this.handleChange} 
                         />
@@ -618,12 +636,12 @@ class Test extends Component  {
                     </label>  
                     <br/>
                   	                                        
-                    <label for="Renal Disease" className="checkText" >                     
+                    <label for="renal_chronic" className="checkText" >                     
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Renal Disease"
-                        id="Renal Disease"
+                        name="renal_chronic"
+                        id="renal_chronic"
                         value={this.state.renal_chronic}
                         onChange={this.handleChange} 
                         />
@@ -631,12 +649,12 @@ class Test extends Component  {
                      </label>
                     <br/>
  
-                    <label for="Tobacco" className="checkText" >                      
+                    <label for="tobacco" className="checkText" >                      
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="Tobacco"
-                        id="Tobacco"
+                        name="tobacco"
+                        id="tobacco"
                         value={this.state.tobacco}
                         onChange={this.handleChange} 
                         />       
@@ -644,12 +662,12 @@ class Test extends Component  {
                      </label> 
                     <br/> 
  
-                    <label for="CovidContact" className="checkText" >                      
+                    <label for="contact_other_covid" className="checkText" >                      
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="CovidContact"
-                        id="CovidContact"
+                        name="contact_other_covid"
+                        id="contact_other_covid"
                         value={this.state.contact_other_covid}
                         onChange={this.handleChange} 
                         />       
@@ -657,12 +675,12 @@ class Test extends Component  {
                      </label> 
                     <br/> 
 
-                    <label for="CovidRes" className="checkText" >                      
+                    <label for="covid_res" className="checkText" >                      
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="CovidRes"
-                        id="CovidRes"
+                        name="covid_res"
+                        id="covid_res"
                         value={this.state.covid_res}
                         onChange={this.handleChange} 
                         />       
@@ -670,12 +688,12 @@ class Test extends Component  {
                      </label> 
                     <br/>                     
  
-                    <label for="ICU" className="checkText" >                      
+                    <label for="icu" className="checkText" >                      
                      <input 
                         type="checkbox"
                         className ="checkbox"
-                        name="ICU"
-                        id="ICU"
+                        name="icu"
+                        id="icu"
                         value={this.state.icu}
                         onChange={this.handleChange} 
                         />       

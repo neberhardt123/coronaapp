@@ -348,28 +348,28 @@ class Test extends Component  {
         super()
         this.state = {
 
-            age: '',
-            AgeError: '',
-            sex: '',
-            GenderError: '',
-            patient_type: false,
-            intubed: false,
-            pneumonia: false,
-            pregnancy:  false,   
-            diabetes:  false,  
-            copd:  false,                                     
-            asthma:  false,  
-            inmsupr:  false,   
-            hypertension:  false,  
-            other_disease:  false,                                   
-            cardiovascular:   false,  
-            obesity: false,              
-            renal_chronic:  false,             
-            tobacco:  false,                
-            covid_res: false,
-            contact_other_covid: false,
-            icu: false,
-            ReturnedData:  ''
+            "sex": '', 
+            "patient_type": false,     
+            "intubed": false,     
+            "pneumonia": false,                                     
+            "age": '',
+            "AgeError" : '',
+            "GenderError": '',
+            "pregnancy":  false,   
+            "diabetes":  false,  
+            "copd":  false,                                     
+            "asthma":  false,  
+            "inmsupr":  false,   
+            "hypertension":  false,  
+            "other_disease":  false,                                   
+            "cardiovascular":   false,  
+            "obesity": false,              
+            "renal_chronic":  false,             
+            "tobacco":  false,                
+            "contact_other_covid": false,
+            "covid_res": false,            
+            "icu": false,
+            "ReturnedData":  ''
         }
         //this.input = react.createRef();
         this.handleChange = this.handleChange.bind(this)
@@ -437,12 +437,13 @@ class Test extends Component  {
     }
 
     Convert(data){
+ 
         if(data["Result"] == 0){ 
             this.setState({ReturnedData: 'Alive'});      
         }       
-        else 
+        if(data["Result"] == 1){ 
             this.setState({ReturnedData: 'Deceased'}); 
-
+        }    
     } 
  
 
@@ -480,16 +481,16 @@ class Test extends Component  {
                     <br/>
 
                     <div className='reset'>
-                    <label for="inpatient" className="checkText" > 
+                    <label for="patient_type" className="checkText" > 
                     <input  
                         type="checkbox"
                         className ="checkbox"
-                        name="inpatient" 
-                        id="inpatient"
-                        value={this.state.inpatient}
+                        name="patient_type" 
+                        id="patient_type"
+                        value={this.state.patient_type}
                         onChange={this.handleChange} 
                           />
-                          Inpatient
+                          Outpatient
                     </label> 
                     <br/>
                    

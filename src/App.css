@@ -12,7 +12,7 @@ body {
   background-color:#d5d6dd;
   background-color:white;
 }
-.home, .Graphs {
+.home  {
   border:1px solid white;
   display:flex;
   height:70vh;
@@ -61,14 +61,14 @@ body {
 	white-space: nowrap;
   background-color:#150e5f;
   color: rgb(224, 223, 223); 
-  display: block;
-  margin-left: 640px;   
+  /* display: block;
+  margin-left: 660px;    */
 
 }
 
-.reset{
+/* .reset{
   all:initial;
-}
+} */
 
 .return{
   padding:10px;
@@ -76,20 +76,19 @@ body {
   border:none;
   border-bottom:1px solid gray;
   background:none;
-  text-align:center;
-
+   text-align:center;
+  /* display: flex;   */
+  /* margin-left: 640px;     */
 }
-
-    /* .checkbox{
  
-      display: block;
-    margin-left: 630px;  
-    margin-right: 300px;    
-}       
-  */
- .checkText{
+ /* .checkText{
  
-  display: block;
-  margin-left: 630px;  
+ display: block;
+  margin-left: 620px;  
   margin-right: 300px;  
-}
+ 
+ 
+
+} */
+ 
+ 

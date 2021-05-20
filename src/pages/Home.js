@@ -7,7 +7,7 @@ function Home() {
 	<>
 		<div className='home'>
 			<div className='item'>
-			<h1>Corona Virus - How much at risk are you?</h1>
+			<h1>Corona Virus - How much are you at risk?</h1>
 			<img src= {c} width="500" height="300" />
 			<br/>
 			<Link to="/test"> Take our Test</Link>
